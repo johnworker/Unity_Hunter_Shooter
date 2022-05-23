@@ -19,7 +19,7 @@ public class LearnData : MonoBehaviour
     //欄位 field
     //儲存各種資料
     //欄位語法
-    //資料類型 欄位自訂名稱 結束語法
+    //資料類型 欄位自訂名稱 指定 值 結束符號
     //定義一筆整數資料 名稱叫做
     int hp;
 
@@ -30,8 +30,11 @@ public class LearnData : MonoBehaviour
     //布林值：保存有或沒有 bool
 
     int lv = 87;
+    //浮點數必須加上 f 後綴，大小F皆可
     float exp = 0.03f;
+    //字串必須使用雙引號
     string playerName = "神人降臨"; //名稱的第二個單字通常用大寫，以方便增加可視性
+    //布林值只有兩種 (true 有，false 沒有)
     bool hasCureSkill = true;
 
     //推薦書：Clean Code 無瑕的程式
