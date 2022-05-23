@@ -29,10 +29,10 @@ public class LearnData : MonoBehaviour
     //字  串：保存文字資訊 string
     //布林值：保存有或沒有 bool
 
-    int lv;
-    float exp;
-    string playerName; //名稱的第二個單字通常用大寫，以方便增加可視性
-    bool hasCureSkill;
+    int lv = 87;
+    float exp = 0.03f;
+    string playerName = "神人降臨"; //名稱的第二個單字通常用大寫，以方便增加可視性
+    bool hasCureSkill = true;
 
     //推薦書：Clean Code 無瑕的程式
 }
