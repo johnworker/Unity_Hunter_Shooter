@@ -27,6 +27,11 @@ public class LearnMethod : MonoBehaviour
         Shoot("冰球", "滋滋滋");              //參數覆蓋
         Shoot("能量球", "光柱");              //不指定執行結果錯誤
         Shoot("能量球", effect: "光柱");      //能量球,咻咻咻，指定 參數名稱: 光柱
+
+        //近距離攻擊
+        Attack(50);
+        //遠距離攻擊
+        Attack(20, "火球");
     }
 
     // 方法語法
@@ -88,7 +93,7 @@ public class LearnMethod : MonoBehaviour
     {
         print("發射：" + type);
         print("音效：" + sound);
-        print("特效：" + effect)
+        print("特效：" + effect);
     }
 
     // 方法的多載 overload
@@ -103,6 +108,18 @@ public class LearnMethod : MonoBehaviour
     private void TestMethod(int number)
     {
 
+    }
+
+
+    private void Attack(float atk)
+    {
+        print("近距離攻擊，攻擊力：" + atk);
+    }
+
+    private void Attack(float atk, string ball)
+    {
+        print("遠距離攻擊，攻擊力：" + atk);
+        print("發射物件：" + ball);
     }
 
 }
