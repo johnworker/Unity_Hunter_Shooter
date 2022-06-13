@@ -22,10 +22,11 @@ public class LearnMethod : MonoBehaviour
         print("肚10よ猭挡狦" + ReturnTen());
         print("坝珇羆基" + CalculatePrice());
 
-        Shoot("瞴");
+        Shoot("瞴");                        //⊿恶穦箇砞磅︽把计
         Shoot("筿瞴");
-        Shoot("瞴", "逮逮逮");
-
+        Shoot("瞴", "逮逮逮");              //把计滦籠
+        Shoot("秖瞴", "琖");              //ぃ﹚磅︽挡狦岿粇
+        Shoot("秖瞴", effect: "琖");      //秖瞴,﹚ 把计嘿: 琖
     }
 
     // よ猭粂猭
@@ -67,8 +68,8 @@ public class LearnMethod : MonoBehaviour
 
     #endregion
 
-    //祇甮瞴祇甮筽筿
-    //挤
+    // 祇甮瞴祇甮筽筿
+    // 挤
     private void shootFire()
     {
         print("祇甮瞴");
@@ -82,10 +83,26 @@ public class LearnMethod : MonoBehaviour
     }
 
 
-    //把计粂猭把计摸 把计嘿 ﹚ 箇砞
-    private void Shoot(string type, string sound = "")
+    // 把计粂猭把计摸 把计嘿 ﹚ 箇砞
+    private void Shoot(string type, string sound = "", string effect = "废铭")
     {
         print("祇甮" + type);
-        print("" +sound);
+        print("" + sound);
+        print("疭" + effect)
     }
+
+    // よ猭更 overload
+    // ﹚竡
+    // 1.嘿よ猭
+    // 2.Τぃ计秖把计┪ぃ摸把计
+    private void TestMethod()
+    {
+
+    }
+
+    private void TestMethod(int number)
+    {
+
+    }
+
 }
