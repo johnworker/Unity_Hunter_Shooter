@@ -73,6 +73,7 @@ public class LearnMethod : MonoBehaviour
 
     #endregion
 
+    #region 發射火球、發射雷電
     // 發射火球、發射雷電
     // 撥放音效
     private void shootFire()
@@ -95,6 +96,8 @@ public class LearnMethod : MonoBehaviour
         print("音效：" + sound);
         print("特效：" + effect);
     }
+
+    #endregion
 
     // 方法的多載 overload
     // 定義：
