@@ -5,64 +5,64 @@ using UnityEngine;
 public class LearnMethod : MonoBehaviour
 {
 
-    // ¦Û­q¤èªk
-    // »İ­n©I¥s¤~·|°õ¦æ
+    // è‡ªè¨‚æ–¹æ³•
+    // éœ€è¦å‘¼å«æ‰æœƒåŸ·è¡Œ
 
-    // Unityªº¤J¤f
-    // ¶}©l¨Æ¥ó (ÂÅ¦â¦WºÙ)
-    // ¼·©ñ¹CÀ¸«á·|°õ¦æ¤@¦¸
-    // ªì©l¤Æ³]©w¡Gªì©lª÷ÃB¡B¤T±ø©Rµ¥µ¥µ¥
+    // Unityçš„å…¥å£
+    // é–‹å§‹äº‹ä»¶ (è—è‰²åç¨±)
+    // æ’¥æ”¾éŠæˆ²å¾ŒæœƒåŸ·è¡Œä¸€æ¬¡
+    // åˆå§‹åŒ–è¨­å®šï¼šåˆå§‹é‡‘é¡ã€ä¸‰æ¢å‘½ç­‰ç­‰ç­‰
 
     private void Start()
     {
-        // ©I¥s¤èªk
-        // ¤èªk¦WºÙ
+        // å‘¼å«æ–¹æ³•
+        // æ–¹æ³•åç¨±
         Text();
         PrintColorText();
-        print("¶Ç¦^10¤èªkµ²ªG¡G" + ReturnTen());
-        print("°Ó«~Á`»ù¡G" + CalculatePrice());
+        print("å‚³å›10æ–¹æ³•çµæœï¼š" + ReturnTen());
+        print("å•†å“ç¸½åƒ¹ï¼š" + CalculatePrice());
 
-        Shoot("¤õ²y");                        //¨S¶ñ·|¥H¹w³]°õ¦æ°Ñ¼Æ
-        Shoot("¹q²y");
-        Shoot("¦B²y", "´ş´ş´ş");              //°Ñ¼ÆÂĞ»\
-        Shoot("¯à¶q²y", "¥ú¬W");              //¤£«ü©w°õ¦æµ²ªG¿ù»~
-        Shoot("¯à¶q²y", effect: "¥ú¬W");      //¯à¶q²y,«¦«¦«¦¡A«ü©w °Ñ¼Æ¦WºÙ: ¥ú¬W
+        Shoot("å­å½ˆ");                        //æ²’å¡«æœƒä»¥é è¨­åŸ·è¡Œåƒæ•¸
+        Shoot("æ•£å½ˆ");
+        Shoot("å†°çƒ", "æ»‹æ»‹æ»‹");              //åƒæ•¸è¦†è“‹
+        Shoot("èƒ½é‡çƒ", "å…‰æŸ±");              //ä¸æŒ‡å®šåŸ·è¡ŒçµæœéŒ¯èª¤
+        Shoot("èƒ½é‡çƒ", effect: "å…‰æŸ±");      //èƒ½é‡çƒ,å’»å’»å’»ï¼ŒæŒ‡å®š åƒæ•¸åç¨±: å…‰æŸ±
 
-        //ªñ¶ZÂ÷§ğÀ»
+        //è¿‘è·é›¢æ”»æ“Š
         Attack(50);
-        //»·¶ZÂ÷§ğÀ»
-        Attack(20, "¤õ²y");
+        //é è·é›¢æ”»æ“Š
+        Attack(20, "ç«çƒ");
     }
 
-    // ¤èªk»yªk
-    // ¦^¶ÇÃş«¬ ¤èªk¦Û­q¦WºÙ (°Ñ¼Æ1, °Ñ¼Æ2, ...) { ¤èªk¤º®e }
-    // ¡ù¤W­z¤§°Ñ¼Æ³q±`¤£«ØÄ³¼g¤Ó¦h¡A¦ıÁÙ¬O¦³¤Ö¼Æ¹CÀ¸¬O¦³¼g¶W¹L10­Ó°Ñ¼Æ
-    // µL¦^¶Ç void
-    // ¤èªk¦WºÙ Unity ²ßºD¥Î¤j¼g¶}ÀY
+    // æ–¹æ³•èªæ³•
+    // å›å‚³é¡å‹ æ–¹æ³•è‡ªè¨‚åç¨± (åƒæ•¸1, åƒæ•¸2, ...) { æ–¹æ³•å…§å®¹ }
+    // â†—ä¸Šè¿°ä¹‹åƒæ•¸é€šå¸¸ä¸å»ºè­°å¯«å¤ªå¤šï¼Œä½†é‚„æ˜¯æœ‰å°‘æ•¸éŠæˆ²æ˜¯æœ‰å¯«è¶…é10å€‹åƒæ•¸
+    // ç„¡å›å‚³ void
+    // æ–¹æ³•åç¨± Unity ç¿’æ…£ç”¨å¤§å¯«é–‹é ­
     private void Text()
     {
-        // ¿é¥X(¤º®e)
+        // è¼¸å‡º(å…§å®¹)
         print("hello world");
 
     }
 
-    #region ¤èªk½m²ß
+    #region æ–¹æ³•ç·´ç¿’
     private void PrintColorText()
     {
-        print("<color=yellow>¶À¦â</color>");
-        print("<color=red>¬õ¦â</color>");
-        print("<color=#003366>ÂÅ¦â</color>");
+        print("<color=yellow>é»ƒè‰²</color>");
+        print("<color=red>ç´…è‰²</color>");
+        print("<color=#003366>è—è‰²</color>");
     }
 
-    // ¶Ç¦^¤èªk
-    // ¥²¶··f°treturn
+    // å‚³å›æ–¹æ³•
+    // å¿…é ˆæ­é…return
     private int ReturnTen()
     {
-        // ¶Ç¦^ ¸ê®Æ (¦¹¸ê®ÆÃş«¬¥²¶·»P¶Ç¦^Ãş«¬¬Û¦P)
+        // å‚³å› è³‡æ–™ (æ­¤è³‡æ–™é¡å‹å¿…é ˆèˆ‡å‚³å›é¡å‹ç›¸åŒ)
         return 10;
     }
 
-    // °Ó©±¨t²Î¡G99¤¸¡A­pºâ¥ş³¡ªº°Ó«~»ù®æ
+    // å•†åº—ç³»çµ±ï¼š99å…ƒï¼Œè¨ˆç®—å…¨éƒ¨çš„å•†å“åƒ¹æ ¼
     public int countProduct = 10;
     public int countPrice = 99;
 
@@ -73,36 +73,39 @@ public class LearnMethod : MonoBehaviour
 
     #endregion
 
-    #region µo®g¤õ²y¡Bµo®g¹p¹q
-    // µo®g¤õ²y¡Bµo®g¹p¹q
-    // ¼·©ñ­µ®Ä
-    private void shootFire()
+
+
+
+    #region ç™¼å°„ç«çƒã€ç™¼å°„é›·é›»
+    // ç™¼å°„ç«çƒã€ç™¼å°„é›·é›»
+    // æ’¥æ”¾éŸ³æ•ˆ
+    private void shootBullet()
     {
-        print("µo®g¤õ²y");
-        print("¼½©ñ­µ®Ä");
+        print("ç™¼å°„å­å½ˆ");
+        print("æ’­æ”¾éŸ³æ•ˆ");
     }
 
-    private void shotLighting()
+    private void shootShotgun()
     {
-        print("µo®g¹q²y");
-        print("¼½©ñ­µ®Ä");
+        print("ç™¼å°„æ•£å½ˆ");
+        print("æ’­æ”¾éŸ³æ•ˆ");
     }
 
 
-    // °Ñ¼Æ»yªk¡G°Ñ¼ÆÃş«¬ °Ñ¼Æ¦WºÙ «ü©w ¹w³]­È
-    private void Shoot(string type, string sound = "«¦«¦«¦", string effect = "·ÏÃú")
+    // åƒæ•¸èªæ³•ï¼šåƒæ•¸é¡å‹ åƒæ•¸åç¨± æŒ‡å®š é è¨­å€¼
+    private void Shoot(string type, string sound = "ç¢°ç¢°ç¢°", string effect = "ç…™éœ§")
     {
-        print("µo®g¡G" + type);
-        print("­µ®Ä¡G" + sound);
-        print("¯S®Ä¡G" + effect);
+        print("ç™¼å°„ï¼š" + type);
+        print("éŸ³æ•ˆï¼š" + sound);
+        print("ç‰¹æ•ˆï¼š" + effect);
     }
 
     #endregion
 
-    // ¤èªkªº¦h¸ü overload
-    // ©w¸q¡G
-    // 1.¬Û¦P¦WºÙªº¤èªk
-    // 2.¦³¤£¦P¼Æ¶qªº°Ñ¼Æ©ÎªÌ¤£¦PÃş«¬ªº°Ñ¼Æ
+    // æ–¹æ³•çš„å¤šè¼‰ overload
+    // å®šç¾©ï¼š
+    // 1.ç›¸åŒåç¨±çš„æ–¹æ³•
+    // 2.æœ‰ä¸åŒæ•¸é‡çš„åƒæ•¸æˆ–è€…ä¸åŒé¡å‹çš„åƒæ•¸
     private void TestMethod()
     {
 
@@ -116,13 +119,13 @@ public class LearnMethod : MonoBehaviour
 
     private void Attack(float atk)
     {
-        print("ªñ¶ZÂ÷§ğÀ»¡A§ğÀ»¤O¡G" + atk);
+        print("æŒåˆ€æ”»æ“Šï¼Œæ”»æ“ŠåŠ›ï¼š" + atk);
     }
 
     private void Attack(float atk, string ball)
     {
-        print("»·¶ZÂ÷§ğÀ»¡A§ğÀ»¤O¡G" + atk);
-        print("µo®gª«¥ó¡G" + ball);
+        print("é è·é›¢æ”»æ“Šï¼Œæ”»æ“ŠåŠ›ï¼š" + atk);
+        print("ç™¼å°„ï¼š" + ball);
     }
 
 }
