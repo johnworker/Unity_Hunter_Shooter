@@ -34,6 +34,31 @@ public class SystemControl : MonoBehaviour
         #endregion
 
         #region 方法
+
+        /// <summary>
+        ///  旋轉角色，讓角色面向彈珠的位置
+        /// </summary>
+        private void TurnCharacter()
+        {
+
+        }
+
+        /// <summary>
+        ///  發射彈珠，根據彈珠總數發射物件
+        /// </summary>
+        private void ShootMarble()
+        {
+
+        }
+
+        /// <summary>
+        ///  回收彈珠
+        /// </summary>
+        private void RecycleMarble()
+        {
+
+        }
+
         #endregion
 
     }
