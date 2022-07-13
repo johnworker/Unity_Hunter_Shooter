@@ -9,6 +9,7 @@ using UnityEngine;
 public class LearnAPINonStatic : MonoBehaviour
 {
     public Transform transA;
+    public Light lightA;
 
     private void Start()
     {
@@ -21,9 +22,11 @@ public class LearnAPINonStatic : MonoBehaviour
 
         // 欄位名稱.非靜態屬性名稱
         print(" A 物件的座標：" + transA.position);
+        print("燈光顏色：" + lightA.color);
 
         // 2.設定 set
         // 欄位名稱.非靜態屬性名稱 指定 值;
         transA.position = new Vector3(1.7f, 0.5f, -10);
+        lightA.color = new Color(1, 0, 0);
     }
 }
