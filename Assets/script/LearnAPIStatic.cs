@@ -28,4 +28,10 @@ public class LearnAPIStatic : MonoBehaviour
         float r = Random.Range(7.7f, 99.9f);
         print("隨機 7.7 ~ 99.9 數值：" + r);
     }
+
+    private void Update()
+    {
+        bool downA = Input.GetKeyDown("a");
+        print("是否按下A：" + downA);
+    }
 }
