@@ -18,7 +18,7 @@ public class SystemControl : MonoBehaviour
 
         // 箭頭
         [Header("箭頭")]
-        public GameObject arraw;
+        public GameObject arrow;
         // 旋轉速度
         [Header("旋轉速度"), Range(0, 500)]
         public float speedTurn = 10.5f;
@@ -63,10 +63,17 @@ public class SystemControl : MonoBehaviour
         /// </summary>
         private void ShootMarble()
         {
+            // 按下 滑鼠左鍵 顯示 箭頭
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                arrow.SetActive(true);
+            }
+
             // 放開 滑鼠左鍵 生成並發射彈珠
             if (Input.GetKeyUp(KeyCode.Mouse0))
             {
                 print("放開左鍵！");
+                arrow.SetActive(false);
 
                 // Object 類別可省略不寫
                 // 直接透過 Object 成員名稱使用
