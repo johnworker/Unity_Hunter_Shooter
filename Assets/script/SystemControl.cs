@@ -34,6 +34,9 @@ public class SystemControl : MonoBehaviour
         // 攻擊參數名稱
         [Header("攻擊參數名稱")]
         public string parAttack = "觸發攻擊";
+        // 彈珠發射速度
+        [Header("彈珠發射速度"), Range(0, 5000)]
+        public float speedMarble = 1000;
 
         public Animator ani;
         #endregion
@@ -69,7 +72,11 @@ public class SystemControl : MonoBehaviour
                 // 直接透過 Object 成員名稱使用
                 // 生成(彈珠)； traSpawnPoint
                 // Quaternion.identity 零度角
-                Instantiate(mrable,traSpawnPoint.position, Quaternion.identity);
+                GameObject tempMarble = Instantiate(mrable,traSpawnPoint.position, Quaternion.identity);
+
+                // 暫存彈珠 取得剛體元件 添加推力 (角色.前方 * 速度)
+                // transform.forward 角色的前方
+                tempMarble.GetComponent<Rigidbody>().AddForce(transform.forward * speedMarble);
             }
         }
 
