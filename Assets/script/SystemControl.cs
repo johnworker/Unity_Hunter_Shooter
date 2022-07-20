@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Collections;
 
 
 namespace LEO
@@ -37,6 +37,8 @@ public class SystemControl : MonoBehaviour
         // 彈珠發射速度
         [Header("彈珠發射速度"), Range(0, 5000)]
         public float speedMarble = 1000;
+        [Header("彈珠發射間格"), Range(0, 2)]
+        public float intervalMarble = 0.5f;
 
         public Animator ani;
         #endregion
@@ -70,11 +72,18 @@ public class SystemControl : MonoBehaviour
             }
 
             // 放開 滑鼠左鍵 生成並發射彈珠
-            if (Input.GetKeyUp(KeyCode.Mouse0))
+            else if (Input.GetKeyUp(KeyCode.Mouse0))
             {
-                print("放開左鍵！");
+                //print("放開左鍵！");
                 arrow.SetActive(false);
+                StartCoroutine(spawnMarble());
+            }
+        }
 
+        private IEnumerator spawnMarble()
+        {
+            for (int i = 0; i < canShootMarbleTotle; i++)
+            {
                 // Object 類別可省略不寫
                 // 直接透過 Object 成員名稱使用
                 // 生成(彈珠)； traSpawnPoint
@@ -84,9 +93,10 @@ public class SystemControl : MonoBehaviour
                 // 暫存彈珠 取得剛體元件 添加推力 (角色.前方 * 速度)
                 // transform.forward 角色的前方
                 tempMarble.GetComponent<Rigidbody>().AddForce(transform.forward * speedMarble);
+                yield return new WaitForSeconds(intervalMarble);
             }
-        }
 
+        }
         /// <summary>
         ///  回收彈珠
         /// </summary>
