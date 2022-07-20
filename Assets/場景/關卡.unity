@@ -11166,12 +11166,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e824b5f2a2d9ee48983478a5f2de45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arraw: {fileID: 1541542561}
+  arrow: {fileID: 1541542561}
   speedTurn: 33
   mrable: {fileID: 5987195791161198660, guid: 916e69d88856c094dac0177e8b1ec145, type: 3}
   canShootMarbleTotle: 10
   traSpawnPoint: {fileID: 1161412516}
   parAttack: "\u89F8\u767C\u653B\u64CA"
+  speedMarble: 1000
   ani: {fileID: 0}
 --- !u!1 &1694073810
 GameObject:
