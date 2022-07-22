@@ -21,6 +21,7 @@ public class Car : MonoBehaviour
 
     //欄位屬性語法
     //[屬性名稱(值)]
+    // Tooltip 提示訊息
 
     //重量
     [Range(1,50)]
