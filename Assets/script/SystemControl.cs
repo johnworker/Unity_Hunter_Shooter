@@ -101,7 +101,9 @@ public class SystemControl : MonoBehaviour
 
         private IEnumerator spawnMarble()
         {
-            for (int i = 0; i < canShootMarbleTotle; i++)
+            int total = canShootMarbleTotal;
+
+            for (int i = 0; i < canShootMarbleTotal; i++)
             {
                 // Object 類別可省略不寫
                 // 直接透過 Object 成員名稱使用
@@ -112,6 +114,12 @@ public class SystemControl : MonoBehaviour
                 // 暫存彈珠 取得剛體元件 添加推力 (角色.前方 * 速度)
                 // transform.forward 角色的前方
                 tempMarble.GetComponent<Rigidbody>().AddForce(transform.forward * speedMarble);
+
+                total--;
+
+                if (total > 0) textMarbleCount.text = "x" + total;
+                else if (total == 0) textMarbleCount.text = "";
+
                 yield return new WaitForSeconds(intervalMarble);
             }
 
