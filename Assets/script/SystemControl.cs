@@ -86,7 +86,22 @@ public class SystemControl : MonoBehaviour
         /// </summary>
         private void TurnCharacter()
         {
+            if (!canShootMarble) return;
+            // 1.滑鼠座標
+            Vector3 posMouse = Input.mousePosition;
+            // print("<Color=yellow>滑鼠座標：" + posMouse + "</color>");
+            // 跟攝影機Ｙ軸一樣
+            posMouse.z = 5;
 
+            // 2.滑鼠座標轉為世界座標
+            Vector3 pos = cameraMouse.ScreenToWorldPoint(posMouse);
+            // 將轉完的世界座標高度設定為角色的高度
+            pos.y = 0.5f;
+            // 3.世界座標給實體物件
+            traMouse.position = pos;
+
+            // 此物件的變形.面向(座標轉換後實體物件)
+            transform.LookAt(traMouse);
         }
 
         /// <summary>
