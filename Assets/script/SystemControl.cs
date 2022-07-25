@@ -48,6 +48,15 @@ public class SystemControl : MonoBehaviour
         /// 能否發射彈珠
         /// </summary>
         private bool canShootMarble = true;
+
+        /// <summary>
+        /// 轉換滑鼠用攝影機
+        /// </summary>
+        private Camera cameraMouse;
+        /// <summary>
+        /// 座標轉換後實體物件
+        /// </summary>
+        private Transform traMouse;
         #endregion
 
         #region 事件
@@ -56,6 +65,12 @@ public class SystemControl : MonoBehaviour
             ani = GetComponent<Animator>();
 
             textMarbleCount.text = "x" + canShootMarbleTotal;
+
+            cameraMouse = GameObject.Find("轉換滑鼠用攝影機").GetComponent<Camera>();
+
+            // traMouse = GameObject.Find("座標轉換後實體物件").GetComponent<Transform>();
+            traMouse = GameObject.Find("座標轉換後實體物件").transform;
+
         }
 
         private void Update()
