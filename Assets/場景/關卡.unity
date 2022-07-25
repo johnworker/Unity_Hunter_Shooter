@@ -14045,11 +14045,12 @@ MonoBehaviour:
   arrow: {fileID: 1541542561}
   speedTurn: 33
   mrable: {fileID: 5987195791161198660, guid: 916e69d88856c094dac0177e8b1ec145, type: 3}
-  canShootMarbleTotle: 3
+  canShootMarbleTotle: 10
   traSpawnPoint: {fileID: 1161412516}
   parAttack: "\u89F8\u767C\u653B\u64CA"
   speedMarble: 1000
   intervalMarble: 0.5
+  textMarbleCount: {fileID: 1199063667}
   ani: {fileID: 1678173186}
 --- !u!95 &1678173186 stripped
 Animator:

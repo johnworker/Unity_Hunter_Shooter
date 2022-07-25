@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 
 namespace LEO
@@ -26,7 +27,7 @@ public class SystemControl : MonoBehaviour
         public GameObject mrable;
         // 彈珠可發射的總數
         [Header("彈珠可發射的總數"), Range(0, 50)]
-        public int canShootMarbleTotle = 15;
+        public int canShootMarbleTotal = 15;
         // 彈珠生成點
         [Header("彈珠生成點")]
         public Transform traSpawnPoint;
@@ -38,6 +39,8 @@ public class SystemControl : MonoBehaviour
         public float speedMarble = 1000;
         [Header("彈珠發射間格"), Range(0, 2)]
         public float intervalMarble = 0.5f;
+        [Header("彈珠數量")]
+        public TextMeshProUGUI textMarbleCount;
 
         public Animator ani;
 
@@ -48,6 +51,13 @@ public class SystemControl : MonoBehaviour
         #endregion
 
         #region 事件
+        private void Awake()
+        {
+            ani = GetComponent<Animator>();
+
+            textMarbleCount.text = "x" + canShootMarbleTotal;
+        }
+
         private void Update()
         {
             ShootMarble();
