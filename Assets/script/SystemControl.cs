@@ -40,6 +40,11 @@ public class SystemControl : MonoBehaviour
         public float intervalMarble = 0.5f;
 
         public Animator ani;
+
+        /// <summary>
+        /// 能否發射彈珠
+        /// </summary>
+        private bool canShootMarble = true;
         #endregion
 
         #region 事件
@@ -64,6 +69,9 @@ public class SystemControl : MonoBehaviour
         /// </summary>
         private void ShootMarble()
         {
+            // 如果 不能發射彈珠 就跳出
+            if (!canShootMarble) return;
+
             // 按下 滑鼠左鍵 顯示 箭頭
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
@@ -73,6 +81,8 @@ public class SystemControl : MonoBehaviour
             // 放開 滑鼠左鍵 生成並發射彈珠
             else if (Input.GetKeyUp(KeyCode.Mouse0))
             {
+                // 不能發射彈珠
+                canShootMarble = false;
                 //print("放開左鍵！");
                 arrow.SetActive(false);
                 StartCoroutine(spawnMarble());
