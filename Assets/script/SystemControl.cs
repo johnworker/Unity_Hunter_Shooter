@@ -71,11 +71,15 @@ public class SystemControl : MonoBehaviour
             // traMouse = GameObject.Find("座標轉換後實體物件").GetComponent<Transform>();
             traMouse = GameObject.Find("座標轉換後實體物件").transform;
 
+            // 物理 忽略圖層碰撞(圖層1，圖層2)
+            Physics.IgnoreLayerCollision(3, 3);
+
         }
 
         private void Update()
         {
             ShootMarble();
+            TurnCharacter();
         }
         #endregion
 
@@ -91,7 +95,7 @@ public class SystemControl : MonoBehaviour
             Vector3 posMouse = Input.mousePosition;
             // print("<Color=yellow>滑鼠座標：" + posMouse + "</color>");
             // 跟攝影機Ｙ軸一樣
-            posMouse.z = 5;
+            posMouse.z = 42;
 
             // 2.滑鼠座標轉為世界座標
             Vector3 pos = cameraMouse.ScreenToWorldPoint(posMouse);
