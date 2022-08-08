@@ -63,6 +63,7 @@ MonoBehaviour:
   goDamage: {fileID: 3036780128498905816, guid: b8d97cc7f2adf9749b93251d1ffb282c, type: 3}
   imgHp: {fileID: 5759539954176108051}
   textHp: {fileID: 6149967670544285440}
+  dataEnemy: {fileID: 11400000, guid: d3a999804cddab94189048516315a305, type: 2}
 --- !u!1001 &887998772340855765
 PrefabInstance:
   m_ObjectHideFlags: 0

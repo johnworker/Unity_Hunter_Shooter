@@ -13,7 +13,15 @@ namespace LEO {
         private Image imgHp;
         [SerializeField, Header("文字血量")]
         private TextMeshProUGUI textHp;
+        [SerializeField, Header("怪物資料")]
+        private DataEnemy dataEnemy;
 
+        private float hp;
+
+        private void Awake()
+        {
+            hp = dataEnemy.hp;
+        }
 
         // 碰撞事件
         // 1.兩個物件必須有一個帶有 Rigidbody
@@ -23,7 +31,15 @@ namespace LEO {
 
         private void OnCollisionEnter(Collision collision)
         {
-            print("碰撞到的物件:" + collision.gameObject);
+            //print("碰撞到的物件:" + collision.gameObject);
+
+            GetDamage();
+        }
+
+        private void GetDamage()
+        {
+            hp -= 50;
+            
         }
     }
 }
