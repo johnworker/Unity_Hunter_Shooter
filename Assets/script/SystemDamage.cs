@@ -37,8 +37,8 @@ namespace LEO {
             limitUp = Random.Range(0.01f, 0.05f);
 
             int r = Random.Range(0, 2);
-            if (r == 0) limitRight = -50;
-            else if (r == 1) limitRight = 50;
+            if (r == 0) limitRight = -0.1f;
+            else if (r == 1) limitRight = 0.1f;
 
             StartCoroutine(MovementUp());
             StartCoroutine(MovementRight());
