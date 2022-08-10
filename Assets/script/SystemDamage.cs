@@ -22,7 +22,11 @@ namespace LEO {
         private float limitRight;
         private TextMeshProUGUI textDmage;
 
-        private void Awake()
+        // 快速選取同一個詞的方式 Alt + Shift + >
+        [SerializeField, Header("效果間隔")]
+        private float interval = 0.025f;
+
+        private void Start()
         {
             textDmage = GetComponentInChildren<TextMeshProUGUI>();
             textDmage.text = damage.ToString();
@@ -30,7 +34,7 @@ namespace LEO {
             if (damage >= 200) textDmage.color = colorGratherThan200;
             else if (damage >= 100) textDmage.color = colorGratherThan100;
 
-            limitUp = Random.Range(50, 80);
+            limitUp = Random.Range(0.01f, 0.05f);
 
             int r = Random.Range(0, 2);
             if (r == 0) limitRight = -50;
@@ -47,19 +51,19 @@ namespace LEO {
             for (int i = 0; i < 10; i++)
             {
                 transform.position += transform.up * limitUp;
-                yield return new WaitForSeconds(0.01f);
+                yield return new WaitForSeconds(interval);
             }
 
             for (int i = 0; i < 3; i++)
             {
                 transform.position -= transform.up * limitUp;
-                yield return new WaitForSeconds(0.01f);
+                yield return new WaitForSeconds(interval);
             }
 
             for (int i = 0; i < 10; i++)
             {
                 textDmage.color -= new Color(0, 0, 0, 0.1f);
-                yield return new WaitForSeconds(0.01f);
+                yield return new WaitForSeconds(interval);
             }
 
         }
@@ -69,7 +73,7 @@ namespace LEO {
             for (int i = 0; i < 10; i++)
             {
                 transform.position += transform.right * limitRight;
-                yield return new WaitForSeconds(0.02f);
+                yield return new WaitForSeconds(interval);
             }
         }
 
@@ -77,14 +81,14 @@ namespace LEO {
         {
             for (int i = 0; i < 5; i++)
             {
-                transform.localScale += Vector3.one * 0.001f;
-                yield return new WaitForSeconds(0.01f);
+                transform.localScale += Vector3.one * 0.0001f;
+                yield return new WaitForSeconds(interval);
             }
 
             for (int i = 0; i < 5; i++)
             {
-                transform.localScale -= Vector3.one * 0.001f;
-                yield return new WaitForSeconds(0.01f);
+                transform.localScale -= Vector3.one * 0.0001f;
+                yield return new WaitForSeconds(interval);
             }
 
         }
