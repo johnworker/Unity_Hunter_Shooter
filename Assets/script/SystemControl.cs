@@ -47,7 +47,8 @@ public class SystemControl : MonoBehaviour
         /// <summary>
         /// 能否發射彈珠
         /// </summary>
-        private bool canShootMarble = true;
+        [HideInInspector]
+        public bool canShootMarble = true;
 
         /// <summary>
         /// 轉換滑鼠用攝影機

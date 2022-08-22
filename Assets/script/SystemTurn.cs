@@ -29,11 +29,13 @@ public class SystemTurn : MonoBehaviour
         /// 回收彈珠數量
         /// </summary>
         private int totalRecycleMarble;
+
+        private bool canSpawn = true;
         private void Awake()
         {
-            systemControl = GameObject.Find("哥布林").GetComponent<SystemControl>();
+            systemControl = GameObject.Find("陳小姐").GetComponent<SystemControl>();
             systemSpawn = GameObject.Find("生成怪物系統").GetComponent<SystemSpawn>();
-            recycleArea = GameObject.Find("回收彈珠").GetComponent<RecycleArea>();
+            recycleArea = GameObject.Find("回收區域").GetComponent<RecycleArea>();
 
             recycleArea.onRecycle.AddListener(RecycleMarble);
         }
@@ -52,11 +54,24 @@ public class SystemTurn : MonoBehaviour
             } 
         }
         /// <summary>
-        /// 
+        /// 移動結束號生成敵人和彈珠
         /// </summary>
         public void MoveEndSpawnEnemy()
         {
+            if (!canSpawn) return;
+
+            canSpawn = false;
             systemSpawn.SpawnRandomEnemy();
+            Invoke("PlayerTurn", 1);
+        }
+        /// <summary>
+        /// 玩家回合
+        /// </summary>
+        private void PlayerTurn()
+        {
+            systemControl.canShootMarble = true;
+            canSpawn = true;
+            totalRecycleMarble = 0;
         }
     }
 

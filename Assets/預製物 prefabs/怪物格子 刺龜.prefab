@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8151646990319079972}
   - component: {fileID: 111874419721015799}
   - component: {fileID: 4291733424765446995}
+  - component: {fileID: 8251378816951485367}
   m_Layer: 0
   m_Name: "\u602A\u7269\u683C\u5B50 \u523A\u9F9C"
   m_TagString: Untagged
@@ -65,6 +66,18 @@ MonoBehaviour:
   textHp: {fileID: 6149967670544285440}
   dataEnemy: {fileID: 11400000, guid: d3a999804cddab94189048516315a305, type: 2}
   aniEnemy: {fileID: 887998772348249781}
+--- !u!114 &8251378816951485367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3154280500312414917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eae109709c72d04e8bb7fe6de785f2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &887998772340855765
 PrefabInstance:
   m_ObjectHideFlags: 0

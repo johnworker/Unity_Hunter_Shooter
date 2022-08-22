@@ -20,9 +20,13 @@ namespace LEO {
 
         private float hp;
         private string parDamage = "觸發受傷";
+
+        private SystemSpawn systemSpawn;
         private void Awake()
         {
             hp = dataEnemy.hp;
+            textHp.text = hp.ToString();
+            systemSpawn = GameObject.Find("生成怪物系統").GetComponent<SystemSpawn>();
         }
 
         // 碰撞事件
@@ -60,7 +64,9 @@ namespace LEO {
 
         private void Dead()
         {
-            print("死亡");
+            //print("死亡");
+            Destroy(gameObject);
+            systemSpawn.totalCountEnemyLive--;
         }
     }
 }

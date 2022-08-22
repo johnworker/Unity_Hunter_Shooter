@@ -28,10 +28,12 @@ namespace LEO
             {
                 transform.position -= new Vector3(0, 0, perDistance);
 
-                yield return new WaitForSeconds(1.5f);
-
-                systemTurn.MoveEndSpawnEnemy();
             }
+
+            yield return new WaitForSeconds(1.5f);
+
+            systemTurn.MoveEndSpawnEnemy();
+
         }
     }
 

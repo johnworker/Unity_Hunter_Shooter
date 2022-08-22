@@ -23,7 +23,7 @@ namespace LEO
         /// <summary>
         /// 怪物與可以吃的彈珠存活總數
         /// </summary>
-        private int totalCountEnemyLive;
+        public int totalCountEnemyLive;
 
         #endregion
 
