@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;   // 資料結構 清單 List
 using System.Linq;                  // 查詢語言
 
-namespace KID
+namespace LEO
 {
     /// <summary>
     /// 生成怪物系統
@@ -19,6 +19,12 @@ namespace KID
 
         [SerializeField]
         private List<Transform> listSecondPlace = new List<Transform>();
+
+        /// <summary>
+        /// 怪物與可以吃的彈珠存活總數
+        /// </summary>
+        private int totalCountEnemyLive;
+
         #endregion
 
         #region 事件
@@ -32,7 +38,7 @@ namespace KID
         /// <summary>
         /// 生成隨機敵人
         /// </summary>
-        private void SpawnRandomEnemy()
+        public void SpawnRandomEnemy()
         {
             int min = 2;
             int max = traSecondPlace.Length;
@@ -79,6 +85,9 @@ namespace KID
                         listSecondPlace[i].position,
                         Quaternion.identity);
                 }
+
+                totalCountEnemyLive++;
+                print("怪物與彈珠數量" + totalCountEnemyLive);
             }
         }
         #endregion
