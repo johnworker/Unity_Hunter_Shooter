@@ -8,6 +8,9 @@ namespace LEO
     {
         [SerializeField, Header("飛行延遲"), Range(0, 2)]
         private float delayFly = 1.5f;
+        [SerializeField, Header("飛行速度"), Range(0, 10)]
+        private float speed = 1.5f;
+
 
         private Transform traCoinFlyTo;
         /// <summary>
@@ -15,6 +18,8 @@ namespace LEO
         /// </summary>
 
         private bool startFly;
+
+        private ManagerCoin managerCoin;
         private void Awake()
         {
             Physics.IgnoreLayerCollision(6, 3);     // 金幣、彈珠忽略碰撞
@@ -22,8 +27,10 @@ namespace LEO
             Physics.IgnoreLayerCollision(6, 7);     // 金幣、怪物忽略碰撞
 
             traCoinFlyTo = GameObject.Find("金幣要前往的位置").transform;
+            managerCoin = GameObject.Find("金幣管理器").GetComponent<ManagerCoin>();
 
-            Invoke("startFly", delayFly);
+            // Invoke 是呼叫函式
+            Invoke("StartFly", delayFly);
         }
 
         private void Update()
@@ -35,11 +42,12 @@ namespace LEO
         /// <summary>
         /// 開始飛行
         /// </summary>
+         #endregion
         private void StartFly()
         {
             startFly = true;
         }
-        #endregion
+       
 
         private void Fly()
         {
@@ -51,6 +59,19 @@ namespace LEO
 
             traCoin = Vector3.Lerp(traCoin, traCoinTo, 0.05f);
             transform.position = traCoin;
+
+            DestroyCoin();
+        }
+
+        private void DestroyCoin()
+        {
+            float dis = Vector3.Distance(transform.position, traCoinFlyTo.position);
+
+            if(dis < 1)
+            {
+                managerCoin.AddCoinAndUpdate();
+                Destroy(gameObject);
+            }
         }
     }
 
