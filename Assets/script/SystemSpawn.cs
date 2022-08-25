@@ -44,7 +44,7 @@ namespace LEO
             int max = traSecondPlace.Length;
 
             int randomCount = Random.Range(min, max);
-            print("隨機怪物數量：" + randomCount);
+            // print("隨機怪物數量：" + randomCount);
 
             // 清單 = 陣列.轉為清單();
             listSecondPlace = traSecondPlace.ToList();
@@ -55,7 +55,7 @@ namespace LEO
             listSecondPlace = listSecondPlace.OrderBy(x => random.Next()).ToList();
 
             int sub = traSecondPlace.Length - randomCount;
-            print("要扣除的數量：" + sub);
+            // print("要扣除的數量：" + sub);
 
             // 迴圈 刪除 要扣掉的數量
             for (int i = 0; i < sub; i++)
@@ -87,7 +87,7 @@ namespace LEO
                 }
 
                 totalCountEnemyLive++;
-                print("怪物與彈珠數量" + totalCountEnemyLive);
+                // print("怪物與彈珠數量" + totalCountEnemyLive);
             }
         }
         #endregion

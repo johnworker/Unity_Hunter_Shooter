@@ -45,11 +45,11 @@ public class SystemTurn : MonoBehaviour
             totleCountMarble = systemControl.canShootMarbleTotal;
 
             totalRecycleMarble++;
-            print("<color=yellow>紆痌Μ计秖" + totalRecycleMarble + "</color>");
+            // print("<color=yellow>紆痌Μ计秖" + totalRecycleMarble + "</color>");
 
             if(totalRecycleMarble == totleCountMarble)
             {
-                print("ΜЧ拨传寄");
+                // print("ΜЧ拨传寄");
                 onTurnEnemy.Invoke();
             } 
         }

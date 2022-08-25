@@ -1055,7 +1055,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 241866633}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: -8}
+  m_LocalPosition: {x: 0, y: 1.5, z: -6.61}
   m_LocalScale: {x: 20, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14101,7 +14101,7 @@ MonoBehaviour:
   arrow: {fileID: 1541542561}
   speedTurn: 33
   mrable: {fileID: 5987195791161198660, guid: 916e69d88856c094dac0177e8b1ec145, type: 3}
-  canShootMarbleTotal: 30
+  canShootMarbleTotal: 15
   traSpawnPoint: {fileID: 1161412516}
   parAttack: "\u89F8\u767C\u653B\u64CA"
   speedMarble: 1000
@@ -14807,7 +14807,7 @@ GameObject:
   - component: {fileID: 1869984572}
   - component: {fileID: 1869984571}
   m_Layer: 0
-  m_Name: "\u8A0A\u606F"
+  m_Name: "\u5B78\u7FD2\u65B9\u6CD5"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
