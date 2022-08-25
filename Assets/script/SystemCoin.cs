@@ -67,7 +67,7 @@ namespace LEO
         {
             float dis = Vector3.Distance(transform.position, traCoinFlyTo.position);
 
-            if(dis < 1)
+            if(dis < 2.5f)
             {
                 managerCoin.AddCoinAndUpdate();
                 Destroy(gameObject);

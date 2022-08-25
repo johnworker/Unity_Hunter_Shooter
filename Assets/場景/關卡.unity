@@ -14481,11 +14481,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1786106193}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00c016331c0dca142897d48d07662e35, type: 3}
+  m_Script: {fileID: 11500000, guid: 672aea5d4d9af9447ba10dd73851897a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayFly: 1.5
-  speed: 5
 --- !u!1 &1808969580
 GameObject:
   m_ObjectHideFlags: 0
