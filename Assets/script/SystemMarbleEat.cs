@@ -23,6 +23,7 @@ namespace LEO
         {
             if (other.name.Contains(nameMarblePlayer))
             {
+                systemTurn.MarbleEat();
                 Destroy(gameObject);
             }
         }

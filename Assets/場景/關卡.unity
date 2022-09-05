@@ -1709,9 +1709,9 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  field of view: 30
+  orthographic: 1
+  orthographic size: 12
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1734,14 +1734,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 317322293}
-  m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: 0, y: 20, z: -25}
+  m_LocalRotation: {x: 0.30070576, y: 0, z: 0, w: 0.953717}
+  m_LocalPosition: {x: 0, y: 25, z: -25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 35, y: 0, z: 0}
 --- !u!114 &317322297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11586,7 +11586,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161412515}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.4, z: 2.18}
+  m_LocalPosition: {x: 0, y: 1.5, z: 2.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12469,7 +12469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4605806329051417237, guid: 86b00453ef372b84db08e225531b2c68, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -25.671663
+      value: -49.2
       objectReference: {fileID: 0}
     - target: {fileID: 4605806329051417237, guid: 86b00453ef372b84db08e225531b2c68, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14223,7 +14223,7 @@ MonoBehaviour:
   canShootMarbleTotal: 15
   traSpawnPoint: {fileID: 1161412516}
   parAttack: "\u89F8\u767C\u653B\u64CA"
-  speedMarble: 1000
+  speedMarble: 1200
   intervalMarble: 0.2
   textMarbleCount: {fileID: 1199063667}
   ani: {fileID: 1678173186}
