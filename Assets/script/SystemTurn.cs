@@ -6,6 +6,7 @@ using UnityEngine.Events;
 namespace LEO{ 
 public class SystemTurn : MonoBehaviour
 {
+        #region 資料
         /// <summary>
         /// 敵人回合
         /// </summary>
@@ -31,6 +32,11 @@ public class SystemTurn : MonoBehaviour
         private int totalRecycleMarble;
 
         private bool canSpawn = true;
+
+        private int countMarbleEat;
+
+        #endregion
+
         private void Awake()
         {
             systemControl = GameObject.Find("陳小姐").GetComponent<SystemControl>();
@@ -72,7 +78,22 @@ public class SystemTurn : MonoBehaviour
             systemControl.canShootMarble = true;
             canSpawn = true;
             totalRecycleMarble = 0;
-        }
-    }
 
-}
+            #region 彈珠數量處理
+            systemControl.canShootMarbleTotal += countMarbleEat;
+            countMarbleEat = 0;
+            #endregion
+        }
+
+        /// <summary>
+        /// 移動結束號生成敵人和彈珠
+        /// </summary>
+
+        public void MarbleEat()
+        {
+            countMarbleEat++;
+        }
+
+       }
+
+    }
