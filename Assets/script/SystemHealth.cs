@@ -21,7 +21,24 @@ namespace LEO {
         private float hp;
         private string parDamage = "觸發受傷";
 
+        /// <summary>
+        /// 碰到會受傷的物件名稱
+        /// </summary>
+        [SerializeField, Header("碰到會受傷的物件名稱")]
+        private string nameHurtObject;
+
+        [Header("玩家接受傷害區域")]
+        [SerializeField] private Vector3 v3DamageSize;
+        [SerializeField] private Vector3 v3DamagePosition;
+
         private SystemSpawn systemSpawn;
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = new Color(0.2f, 1, 0.2f, 0.5f);
+            Gizmos.DrawCube(v3DamagePosition, v3DamageSize);
+        }
+
         private void Awake()
         {
             hp = dataEnemy.hp;
@@ -35,15 +52,30 @@ namespace LEO {
         // 3.是否有勾選 Is Trigger
         // 3-1. 兩者都沒有勾選 Is Trigger 使用 OnCollision
 
+        private void Update()
+        {
+            CheckObjectInDamageArea();
+        }
 
         #region 碰撞事件
         private void OnCollisionEnter(Collision collision)
         {
-            //print("碰撞到的物件:" + collision.gameObject);
-
-            GetDamage();
+            if(collision.gameObject.name.Contains(nameHurtObject)) GetDamage();
         }
         #endregion
+
+        /// <summary>
+        /// 檢查物件是否進入受傷區域
+        /// </summary>
+        private void CheckObjectInDamageArea()
+        {
+            Collider[] hits = Physics.OverlapBox(v3DamagePosition, v3DamageSize / 2);
+
+            if (hits.Length > 0)
+            {
+                print("進到受傷區域的物件：" + hits[0]);
+            }
+        }
 
         /// <summary>
         /// 受傷
