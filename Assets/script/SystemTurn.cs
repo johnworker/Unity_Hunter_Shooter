@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 namespace LEO{ 
 public class SystemTurn : MonoBehaviour
@@ -35,16 +36,28 @@ public class SystemTurn : MonoBehaviour
 
         private int countMarbleEat;
 
+        private TextMeshProUGUI textFloorCount;
+        private int countFloor = 1;
+
         #endregion
+
+        /// <summary>
+        /// 層數數子
+        /// </summary>
 
         private void Awake()
         {
             systemControl = GameObject.Find("陳小姐").GetComponent<SystemControl>();
             systemSpawn = GameObject.Find("生成怪物系統").GetComponent<SystemSpawn>();
             recycleArea = GameObject.Find("回收區域").GetComponent<RecycleArea>();
+            textFloorCount = GameObject.Find("層數數字").GetComponent<TextMeshProUGUI>();
+            
 
             recycleArea.onRecycle.AddListener(RecycleMarble);
         }
+
+        [SerializeField, Header("沒有移動物件並且延遲生成的時間"), Range(0, 3)]
+        private float noMoveObjectAndDelaySpawn = 1;
 
        private void RecycleMarble()
         {
@@ -57,6 +70,12 @@ public class SystemTurn : MonoBehaviour
             {
                 // print("回收完畢，換敵人回合");
                 onTurnEnemy.Invoke();
+
+                // 如果沒有敵人就移動結束並生成敵人與彈珠
+                if(FindObjectsOfType<SystemMove>().Length == 0)
+                {
+                    Invoke("MoveEndSpawnEnemy", noMoveObjectAndDelaySpawn);
+                }
             } 
         }
         /// <summary>
@@ -83,6 +102,9 @@ public class SystemTurn : MonoBehaviour
             systemControl.canShootMarbleTotal += countMarbleEat;
             countMarbleEat = 0;
             #endregion
+
+            countFloor++;
+            textFloorCount.text = countFloor.ToString();
         }
 
         /// <summary>
