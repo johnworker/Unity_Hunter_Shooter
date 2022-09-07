@@ -39,6 +39,10 @@ public class SystemTurn : MonoBehaviour
         private TextMeshProUGUI textFloorCount;
         private int countFloor = 1;
 
+        [SerializeField, Header("當前層數的最大值"), Range(1, 100)]
+        private int countFloorMax = 50;
+        private bool isFloorCountMax;
+
         #endregion
 
         /// <summary>
@@ -85,8 +89,12 @@ public class SystemTurn : MonoBehaviour
         {
             if (!canSpawn) return;
 
-            canSpawn = false;
-            systemSpawn.SpawnRandomEnemy();
+            if (!isFloorCountMax)
+            {
+                canSpawn = false;
+                systemSpawn.SpawnRandomEnemy();
+            }
+
             Invoke("PlayerTurn", 1);
         }
         /// <summary>
@@ -103,8 +111,21 @@ public class SystemTurn : MonoBehaviour
             countMarbleEat = 0;
             #endregion
 
-            countFloor++;
-            textFloorCount.text = countFloor.ToString();
+            if(countFloor < countFloorMax)
+            { 
+                countFloor++;
+                textFloorCount.text = countFloor.ToString();
+            }
+
+            if (countFloor == countFloorMax) isFloorCountMax = true;
+
+            if(isFloorCountMax)
+            {
+                if(FindObjectOfType<SystemMove>().Length == 0)
+                {
+                    print("挑戰關卡成功");
+                }
+            }
         }
 
         /// <summary>

@@ -12,6 +12,8 @@ namespace LEO
         private SystemTurn systemTurn;
         private float moveDistance = 2;
 
+        public int Length { get; internal set; }
+
         private void Awake()
         {
             systemTurn = GameObject.Find("回合系統").GetComponent<SystemTurn>();
