@@ -33,7 +33,11 @@ namespace LEO {
         [SerializeField, Header("接收傷害的圖層")]
         private LayerMask layerDamage;
 
+        [SerializeField, Header("是否為玩家")]
+        private bool isPlayer;
+
         private SystemSpawn systemSpawn;
+        private SystemFinal systemFinal;
 
         private void OnDrawGizmos()
         {
@@ -46,6 +50,7 @@ namespace LEO {
             hp = dataEnemy.hp;
             textHp.text = hp.ToString();
             systemSpawn = GameObject.Find("生成怪物系統").GetComponent<SystemSpawn>();
+            systemFinal = FindObjectOfType<SystemFinal>();
         }
 
         // 碰撞事件
@@ -101,11 +106,15 @@ namespace LEO {
 
         private void Dead()
         {
-            //print("死亡");
-            Destroy(gameObject);
-            systemSpawn.totalCountEnemyLive--;
+            if (isPlayer) systemFinal.ShowFinalAndUndateSubTitle("挑戰關卡失敗...");
+            else
+            {
+                //print("死亡");
+                Destroy(gameObject);
+                systemSpawn.totalCountEnemyLive--;
 
-            DropCoin();
+                DropCoin();
+            }
         }
 
         private void DropCoin()

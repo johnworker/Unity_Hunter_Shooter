@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using TMPro;
 
 namespace LEO{ 
-public class SystemTurn : MonoBehaviour
+public class SystemTurn : SystemFinal
 {
         #region 資料
         /// <summary>
@@ -43,6 +43,8 @@ public class SystemTurn : MonoBehaviour
         private int countFloorMax = 50;
         private bool isFloorCountMax;
 
+        private SystemFinal systemFinal;
+
         #endregion
 
         /// <summary>
@@ -58,6 +60,8 @@ public class SystemTurn : MonoBehaviour
             
 
             recycleArea.onRecycle.AddListener(RecycleMarble);
+
+            systemFinal = FindObjectOfType<SystemFinal>();
         }
 
         [SerializeField, Header("沒有移動物件並且延遲生成的時間"), Range(0, 3)]
@@ -123,7 +127,7 @@ public class SystemTurn : MonoBehaviour
             {
                 if(FindObjectOfType<SystemMove>().Length == 0)
                 {
-                    print("挑戰關卡成功");
+                    systemFinal.ShowFinalAndUndateSubTitle("恭喜挑戰關卡成功!");
                 }
             }
         }

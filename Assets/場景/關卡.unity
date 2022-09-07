@@ -14942,6 +14942,7 @@ MonoBehaviour:
   layerDamage:
     serializedVersion: 2
     m_Bits: 128
+  isPlayer: 1
 --- !u!1 &1693378816
 GameObject:
   m_ObjectHideFlags: 0
@@ -16947,7 +16948,7 @@ MonoBehaviour:
   onTurnEnemy:
     m_PersistentCalls:
       m_Calls: []
-  countFloorMax: 50
+  countFloorMax: 2
   noMoveObjectAndDelaySpawn: 1
 --- !u!1 &2134128087
 GameObject:
