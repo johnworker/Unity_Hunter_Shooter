@@ -62,7 +62,8 @@ namespace LEO {
         #region ¸I¼²¨Æ¥ó
         private void OnCollisionEnter(Collision collision)
         {
-            if(collision.gameObject.name.Contains(nameHurtObject)) GetDamage();
+            if(collision.gameObject.name.Contains(nameHurtObject)) 
+                GetDamage(collision.gameObject.GetComponent<SystemAttack>().valueAttack);
         }
         #endregion
 
@@ -77,7 +78,7 @@ namespace LEO {
 
             if (hits.Length > 0)
             {
-                GetDamage();
+                GetDamage(hits[0].GetComponent<SystemAttack>().valueAttack);
                 Destroy(hits[0].gameObject);
             }
         }
@@ -85,9 +86,8 @@ namespace LEO {
         /// <summary>
         /// ¨ü¶Ë
         /// </summary>
-        private void GetDamage()
+        private void GetDamage(float getDamage)
         {
-            float getDamage = 50;
             hp -= getDamage;
             textHp.text = hp.ToString();
             imgHp.fillAmount = hp / dataEnemy.hp;
