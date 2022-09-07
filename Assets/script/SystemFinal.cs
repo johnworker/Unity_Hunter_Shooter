@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -12,8 +11,9 @@ namespace LEO
     /// </summary>
     public class SystemFinal : MonoBehaviour
     {
+        #region 資料
         /// <summary>
-        /// 遊戲結束畫面
+        /// 遊戲結束畫面底圖
         /// </summary>
         private CanvasGroup groupFinal;
         /// <summary>
@@ -28,10 +28,11 @@ namespace LEO
         /// 離開遊戲
         /// </summary>
         private Button btnQuit;
+        #endregion
 
         private void Awake()
         {
-            groupFinal = GameObject.Find("遊戲結束畫面").GetComponent<CanvasGroup>();
+            groupFinal = GameObject.Find("遊戲結束畫面底圖").GetComponent<CanvasGroup>();
             textSubTitle = GameObject.Find("遊戲結束小標題").GetComponent<TextMeshProUGUI>();
             btnReplay = GameObject.Find("重新遊戲").GetComponent<Button>();
             btnQuit = GameObject.Find("離開遊戲").GetComponent<Button>();
