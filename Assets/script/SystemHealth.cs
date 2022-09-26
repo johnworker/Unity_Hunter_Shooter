@@ -88,6 +88,13 @@ namespace LEO {
             }
         }
 
+        [SerializeField, Header("受傷音效")]
+        private AudioClip soundHurt;
+
+        [SerializeField, Header("死亡音效")]
+        private AudioClip soundDead;
+
+
         /// <summary>
         /// 受傷
         /// </summary>
@@ -101,11 +108,18 @@ namespace LEO {
             SystemDamage temDamage = Instantiate(goDamage, pos, Quaternion.Euler(45, 0, 0)).GetComponent<SystemDamage>();
             temDamage.damage = getDamage;
 
+            SystemSound.instance.PlaySound(soundHurt, new Vector2(0.7f, 1.2f));
+
             if (hp <= 0) Dead();
         }
 
+        /// <summary>
+        /// 死亡
+        /// </summary>
         private void Dead()
         {
+            SystemSound.instance.PlaySound(soundDead, new Vector2(0.7f, 1.2f));
+
             if (isPlayer) systemFinal.ShowFinalAndUndateSubTitle("挑戰關卡失敗...");
             else
             {
