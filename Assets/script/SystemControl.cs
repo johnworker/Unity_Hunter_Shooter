@@ -91,6 +91,7 @@ public class SystemControl : MonoBehaviour
         /// </summary>
         private void TurnCharacter()
         {
+            // 如果 不能發射 就跳出
             if (!canShootMarble) return;
             // 1.滑鼠座標
             Vector3 posMouse = Input.mousePosition;
