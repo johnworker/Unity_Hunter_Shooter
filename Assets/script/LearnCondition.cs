@@ -105,8 +105,6 @@ public class LearnCondition : MonoBehaviour
                 print("沒有此道具");
                 break;
 
-
-
         }
 
         switch (stateplayer)
@@ -136,7 +134,5 @@ public class LearnCondition : MonoBehaviour
         #endregion
 
     }
-
-
 
 }
