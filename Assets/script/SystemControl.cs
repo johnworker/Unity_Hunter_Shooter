@@ -24,7 +24,7 @@ public class SystemControl : MonoBehaviour
         public float speedTurn = 10.5f;
         // 彈珠預置物
         [Header("彈珠預置物")]
-        public GameObject mrable;
+        public GameObject marble;
         // 彈珠可發射的總數
         [Header("彈珠可發射的總數"), Range(0, 50)]
         public int canShootMarbleTotal = 15;
@@ -148,7 +148,7 @@ public class SystemControl : MonoBehaviour
                 // 直接透過 Object 成員名稱使用
                 // 生成(彈珠)； traSpawnPoint
                 // Quaternion.identity 零度角
-                GameObject tempMarble = Instantiate(mrable,traSpawnPoint.position, Quaternion.identity);
+                GameObject tempMarble = Instantiate(marble,traSpawnPoint.position, Quaternion.identity);
 
                 // 暫存彈珠 取得剛體元件 添加推力 (角色.前方 * 速度)
                 // transform.forward 角色的前方
@@ -164,13 +164,6 @@ public class SystemControl : MonoBehaviour
 
                 yield return new WaitForSeconds(intervalMarble);
             }
-
-        }
-        /// <summary>
-        ///  回收彈珠
-        /// </summary>
-        private void RecycleMarble()
-        {
 
         }
 

@@ -67,7 +67,11 @@ public class SystemTurn : SystemFinal
         [SerializeField, Header("沒有移動物件並且延遲生成的時間"), Range(0, 3)]
         private float noMoveObjectAndDelaySpawn = 1;
 
-       private void RecycleMarble()
+        /// <summary>
+        ///  回收彈珠
+        /// </summary>
+
+        private void RecycleMarble()
         {
             totleCountMarble = systemControl.canShootMarbleTotal;
 
