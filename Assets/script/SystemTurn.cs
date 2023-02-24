@@ -13,8 +13,11 @@ public class SystemTurn : SystemFinal
         /// </summary>
         public UnityEvent onTurnEnemy;
 
+        // 需要玩家的彈珠資料
         private SystemControl systemControl;
+        // 需要知道幾隻怪物在場上
         private SystemSpawn systemSpawn;
+        // 需要知道回收區域
         private RecycleArea recycleArea;
 
         /// <summary>
@@ -48,7 +51,7 @@ public class SystemTurn : SystemFinal
         #endregion
 
         /// <summary>
-        /// 層數數子
+        /// 層數數字
         /// </summary>
 
         private void Awake()
