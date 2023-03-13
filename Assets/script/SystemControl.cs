@@ -47,6 +47,7 @@ public class SystemControl : MonoBehaviour
         /// <summary>
         /// 能否發射彈珠
         /// </summary>
+        // HideInInspector 隱藏公開屬性
         [HideInInspector]
         public bool canShootMarble = true;
 
