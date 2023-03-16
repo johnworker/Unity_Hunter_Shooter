@@ -131,6 +131,9 @@ namespace LEO {
             }
         }
 
+        /// <summary>
+        /// ±¼¸¨ª÷¹ô
+        /// </summary>
         private void DropCoin()
         {
             int range = Random.Range(dataEnemy.v2CoinRange.x, dataEnemy.v2CoinRange.y);
