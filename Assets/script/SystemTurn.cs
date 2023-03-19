@@ -39,6 +39,9 @@ public class SystemTurn : SystemFinal
 
         private int countMarbleEat;
 
+        /// <summary>
+        /// 層數數字
+        /// </summary>
         private TextMeshProUGUI textFloorCount;
         private int countFloor = 1;
 
@@ -49,10 +52,6 @@ public class SystemTurn : SystemFinal
         private SystemFinal systemFinal;
 
         #endregion
-
-        /// <summary>
-        /// 層數數字
-        /// </summary>
 
         private void Awake()
         {
@@ -94,7 +93,7 @@ public class SystemTurn : SystemFinal
             } 
         }
         /// <summary>
-        /// 移動結束號生成敵人和彈珠
+        /// 移動結束後生成敵人和彈珠
         /// </summary>
         public void MoveEndSpawnEnemy()
         {

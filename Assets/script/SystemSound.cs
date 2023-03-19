@@ -10,6 +10,8 @@ namespace LEO
     [RequireComponent(typeof(AudioSource))]
     public class SystemSound : MonoBehaviour
     {
+        // static的意思為一開始儲存在記憶體內
+
         // 如果其他系統需要與此溝通可以使用此寫法
         // 定義一個與此腳本相同的欄位設為靜態
         // 名稱習慣會用 instance 實體
@@ -27,8 +29,8 @@ namespace LEO
         /// <summary>
         /// 播放音效
         /// </summary>
-        /// <param name="sound"></param>
-        /// <param name="rangeVolum"></param>
+        /// <param name="sound">音效檔</param>
+        /// <param name="rangeVolum">音量範圍</param>
         public void PlaySound(AudioClip sound, Vector2 rangeVolum)
         {
             // 取得隨機範圍的音量

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5987195791161198661}
   - component: {fileID: -4250424363404141378}
   - component: {fileID: 6825390018881762187}
+  - component: {fileID: 7033739990768279787}
   m_Layer: 3
   m_Name: "\u5F48\u73E0"
   m_TagString: Untagged
@@ -135,7 +136,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!114 &6825390018881762187
 MonoBehaviour:
@@ -151,6 +152,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dataAttack: {fileID: 11400000, guid: fdb9a170d645f8d439387837c84e396c, type: 2}
   valueAttack: 0
+--- !u!114 &7033739990768279787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5987195791161198660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d29aac5bde3190349b959d53d486d7b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerEnemy:
+    serializedVersion: 2
+    m_Bits: 128
+  timeRecycle: 5
+  v3SpeedRecycle: {x: 0, y: 0, z: -1500}
 --- !u!1 &5987195791194678382
 GameObject:
   m_ObjectHideFlags: 0

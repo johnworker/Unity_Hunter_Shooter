@@ -43,6 +43,7 @@ namespace LEO
         /// <summary>
         /// 顯示結束畫面並更新小標題
         /// </summary>
+        /// <param name="subTitle">小標題文字</param>
         public void ShowFinalAndUndateSubTitle(string subTitle)
         {
             textSubTitle.text = subTitle;
